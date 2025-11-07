@@ -1,0 +1,21 @@
+// {
+//   "extends": "./tsconfig.base.json",
+//   "compilerOptions": {
+//     "target": "es2015",
+//     "lib": ["DOM", "DOM.Iterable", "ES2021"],
+//     "allowSyntheticDefaultImports": true,
+//     "module": "ESNext",
+//     "esModuleInterop": true,
+//     "moduleResolution": "bundler",
+//     "jsx": "react-jsx",
+//     "skipLibCheck": true,
+//     "strict": true,
+//     "noEmit": true,
+//     "baseUrl": ".",
+//     "paths": {
+//       "@ui/*": ["src/*"]
+//     },
+//     "types": ["webpack-env", "node"]
+//   },
+//   "include": ["playground", "src"]
+// }

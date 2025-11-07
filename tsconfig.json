@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": ["DOM", "DOM.Iterable", "ES2015"],
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "noEmit": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ui/*": ["src/*"]
+    },
+    "types": ["node"]
+  },
+  "include": ["src", "playground", "types"]
+}

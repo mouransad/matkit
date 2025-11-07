@@ -1,25 +1,38 @@
 {
   "name": "matkit",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "ui-kit for material design",
   "license": "ISC",
   "author": "",
-  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "watch": "webpack --watch",
-    "start": "webpack server --open"
+    "typecheck:play": "tsc -p tsconfig.json --noEmit",
+    "dev:play": "NODE_ENV=development webpack serve --config ./webpack.play.config.js",
+    "build:play": "NODE_ENV=production webpack --config ./webpack.play.config.js",
+    "start:play": "serve -s playground-dist -l 3000"
   },
   "devDependencies": {
-    "express": "^5.1.0",
-    "html-webpack-plugin": "^5.6.3",
-    "webpack": "^5.101.0",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/webpack-env": "^1.18.8",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "serve": "^14.2.5",
+    "style-loader": "^4.0.0",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-middleware": "^7.4.2",
     "webpack-dev-server": "^5.2.2"
   },
-  "dependencies": {
-    "lodash": "^4.17.21"
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   }
 }
