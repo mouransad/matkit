@@ -5,12 +5,12 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "index.js",
   "scripts": {
     "typecheck:play": "tsc -p tsconfig.json --noEmit",
-    "dev:play": "NODE_ENV=development webpack serve --config ./webpack.play.config.js",
-    "build:play": "NODE_ENV=production webpack --config ./webpack.play.config.js",
-    "start:play": "serve -s playground-dist -l 3000"
+    "dev:play": "NODE_ENV=development webpack serve --config ./webpack.play.config.cjs",
+    "build:play": "NODE_ENV=production webpack --config ./webpack.play.config.cjs",
+    "start:play": "serve -s playground-dist -l 3000",
+    "build:lib": "webpack --config ./webpack.lib.esm.config.cjs && tsc -p tsconfig.lib.json"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
@@ -34,5 +34,21 @@
   "peerDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
+  },
+  "sideEffects": [
+    "*.css",
+    "**/*.css"
+  ],
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "files": ["dist"],
+  "exports": {
+    "./components/*": {
+      "types": "./dist/components/*/index.d.ts",
+      "import": "./dist/components/*/index.mjs",
+      "require": "./dist/components/*/index.js"
+    },
+    "./button.css": "./dist/assets/css/button.css"
   }
 }

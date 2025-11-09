@@ -9,7 +9,6 @@ const isDev = !isProd;
 const config = {
     mode: isProd ? "production" : "development",
 
-    // remove the leading slash so it resolves from this repo
     entry: path.resolve(__dirname, "playground/index.tsx"),
 
     output: {
@@ -25,7 +24,8 @@ const config = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
         alias: {
-            "@ui": path.resolve(__dirname, "src"),
+            "@src": path.resolve(__dirname, "src"),
+            "@components": path.resolve(__dirname, 'src/components')
         },
     },
 

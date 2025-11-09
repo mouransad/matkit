@@ -13,8 +13,10 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["src/*"]
+      "@src/*": ["src/*"],
+      "@components/*": ["src/components/*"]
     },
+    
     "types": ["node"]
   },
   "include": ["src", "playground", "types"]
