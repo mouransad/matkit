@@ -4,9 +4,9 @@ import clsx from 'clsx';
 
 interface PropTypes extends ComponentProps<'input'> {}
 
-const Input: FC<PropTypes> = ({ children, className, ...props }) => {
+const Input: FC<PropTypes> = ({ children, className, ...otherProps }) => {
     return (
-        <input {...props} className={clsx(styles.button, className)}>
+        <input className={clsx(styles.input, className)}  {...otherProps}>
             {children}
         </input>
     );

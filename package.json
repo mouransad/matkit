@@ -10,18 +10,28 @@
     "dev:play": "NODE_ENV=development webpack serve --config ./webpack.play.config.cjs",
     "build:play": "NODE_ENV=production webpack --config ./webpack.play.config.cjs",
     "start:play": "serve -s playground-dist -l 3000",
-    "build:lib": "webpack --config ./webpack.lib.esm.config.cjs && tsc -p tsconfig.lib.json"
+
+    "clean:lib": "rm -rf dist",
+    "build-esm:lib": "swc src/* -d dist --strip-leading-paths --config-file .esm.swcrc --out-file-extension mjs",
+    "build-cjs:lib": "swc src/* -d dist --strip-leading-paths --config-file .cjs.swcrc --out-file-extension cjs",
+    "build-ts:lib": "npm run build-esm:lib && npm run build-cjs:lib && tsc --emitDeclarationOnly -p tsconfig.lib.json",
+    "copy-css:lib": "cpy \"src/**/*.css\" dist --parents",
+    "build:lib": "npm run clean:lib && npm run build-ts:lib && npm run copy-css:lib"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
+    "@swc/cli": "^0.7.9",
+    "@swc/core": "^1.15.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@types/webpack-env": "^1.18.8",
     "babel-loader": "^10.0.0",
+    "cpy-cli": "^6.0.0",
     "css-loader": "^7.1.2",
+    "esbuild": "0.27.0",
     "html-webpack-plugin": "^5.6.4",
     "mini-css-extract-plugin": "^2.9.4",
     "serve": "^14.2.5",
@@ -35,20 +45,17 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
-  "sideEffects": [
-    "*.css",
-    "**/*.css"
-  ],
   "dependencies": {
     "clsx": "^2.1.1"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     "./components/*": {
       "types": "./dist/components/*/index.d.ts",
       "import": "./dist/components/*/index.mjs",
-      "require": "./dist/components/*/index.js"
-    },
-    "./button.css": "./dist/assets/css/button.css"
+      "require": "./dist/components/*/index.cjs"
+    }
   }
 }

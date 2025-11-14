@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "emitDeclarationOnly": true,
     "rootDir": "src",
     "outDir": "dist",
 
@@ -15,9 +14,8 @@
       "@src/*": ["src/*"],
       "@components/*": ["src/components/*"]
     },
-
     "stripInternal": true,
     "skipLibCheck": true
   },
-  "include": ["src/components", "types"],
+  "include": ["src", "types"],
 }
