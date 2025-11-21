@@ -8,8 +8,8 @@
     "dev:play": "vite",
     "build:play": "tsc -b && vite build",
     "preview": "vite preview",
-    "clean:lib": "rm -rf lib",
-    "build:icons": "svgr -d src/lib/icons src/assets/icons --no-index",
+    "clean:lib": "rm -rf lib && rm -rf src/lib/icons/*",
+    "build:icons": "node scripts/build-icons.cjs",
     "build-esm:lib": "swc src/lib/* -d . --strip-leading-paths --config-file .esm.swcrc --out-file-extension mjs",
     "build-cjs:lib": "swc src/lib/* -d . --strip-leading-paths --config-file .cjs.swcrc --out-file-extension cjs",
     "build-ts:lib": "npm run build-esm:lib && npm run build-cjs:lib && tsc --emitDeclarationOnly -p tsconfig.lib.json",
@@ -27,6 +27,7 @@
     "@eslint/js": "^9.39.1",
     "@svgr/cli": "^8.1.0",
     "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
     "@swc/cli": "^0.7.9",
     "@swc/core": "^1.15.3",
     "@types/node": "^24.10.1",
@@ -48,11 +49,6 @@
       "types": "./lib/components/*/index.d.ts",
       "import": "./lib/components/*/index.mjs",
       "require": "./lib/components/*/index.cjs"
-    },
-    "./icons": {
-      "types": "./lib/icons/index.d.ts",
-      "import": "./lib/icons/index.mjs",
-      "require": "./lib/icons/index.cjs"
     },
     "./icons/*": {
       "types": "./lib/icons/*.d.ts",
