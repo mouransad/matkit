@@ -3,8 +3,8 @@ import Button from "./../src/components/button"; // from your library source via
 import heroImage from './hero_image.webp';
 import styles from './styles.module.css';
 import Mamad from "./Mamad";
+import { CallIn } from "@src/icons";
 
-console.log(styles);
 function App() {
     return (
         <div style={{ padding: 24 }}>
@@ -13,6 +13,7 @@ function App() {
             <img src={heroImage} width={100} height={100} />
             <div className={styles.hello}>hello style</div>
             <Mamad />
+            <CallIn width={50} height={50} />
         </div>
     );
 }
