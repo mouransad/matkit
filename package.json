@@ -1,0 +1,63 @@
+{
+  "name": "matkit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "dev:play": "vite",
+    "build:play": "tsc -b && vite build",
+    "preview": "vite preview",
+    "clean:lib": "rm -rf lib",
+    "build:icons": "svgr -d src/lib/icons src/assets/icons --no-index",
+    "build-esm:lib": "swc src/lib/* -d . --strip-leading-paths --config-file .esm.swcrc --out-file-extension mjs",
+    "build-cjs:lib": "swc src/lib/* -d . --strip-leading-paths --config-file .cjs.swcrc --out-file-extension cjs",
+    "build-ts:lib": "npm run build-esm:lib && npm run build-cjs:lib && tsc --emitDeclarationOnly -p tsconfig.lib.json",
+    "copy-css:lib": "cpy \"src/lib/**/*.css\" lib --parents",
+    "build:lib": "npm run clean:lib && npm run build:icons && npm run build-ts:lib && npm run copy-css:lib"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@svgr/cli": "^8.1.0",
+    "@svgr/core": "^8.1.0",
+    "@swc/cli": "^0.7.9",
+    "@swc/core": "^1.15.3",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "cpy-cli": "^6.0.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4"
+  },
+  "exports": {
+    "./components/*": {
+      "types": "./lib/components/*/index.d.ts",
+      "import": "./lib/components/*/index.mjs",
+      "require": "./lib/components/*/index.cjs"
+    },
+    "./icons": {
+      "types": "./lib/icons/index.d.ts",
+      "import": "./lib/icons/index.mjs",
+      "require": "./lib/icons/index.cjs"
+    },
+    "./icons/*": {
+      "types": "./lib/icons/*.d.ts",
+      "import": "./lib/icons/*.mjs",
+      "require": "./lib/icons/*.cjs"
+    }
+  }
+}

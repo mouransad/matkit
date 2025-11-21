@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "rootDir": "src/lib",
+    "outDir": "lib",
+
+    "jsx": "react-jsx",
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/lib/*"],
+      "@components/*": ["src/lib/components/*"],
+      "@icons/*": ["src/lib/icons/*"]
+    },
+    "stripInternal": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/lib", "types"]
+}
