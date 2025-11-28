@@ -1,0 +1,215 @@
+:root {
+  /* Tonal Primary */
+  --rgb-tonal-primary-0: 0 0 0;
+  --rgb-tonal-primary-10: 33 0 93;
+  --rgb-tonal-primary-20: 56 30 114;
+  --rgb-tonal-primary-30: 79 55 139;
+  --rgb-tonal-primary-40: 103 80 164;
+  --rgb-tonal-primary-50: 127 103 190;
+  --rgb-tonal-primary-60: 154 130 219;
+  --rgb-tonal-primary-70: 182 157 248;
+  --rgb-tonal-primary-80: 208 188 255;
+  --rgb-tonal-primary-90: 234 221 255;
+  --rgb-tonal-primary-95: 246 237 255;
+  --rgb-tonal-primary-99: 255 251 254;
+  --rgb-tonal-primary-100: 255 255 255;
+
+  /* Tonal Secondary */
+  --rgb-tonal-secondary-0: 0 0 0;
+  --rgb-tonal-secondary-10: 29 25 43;
+  --rgb-tonal-secondary-20: 51 45 65;
+  --rgb-tonal-secondary-30: 74 68 88;
+  --rgb-tonal-secondary-40: 98 91 113;
+  --rgb-tonal-secondary-50: 122 114 137;
+  --rgb-tonal-secondary-60: 149 141 165;
+  --rgb-tonal-secondary-70: 176 167 192;
+  --rgb-tonal-secondary-80: 204 194 220;
+  --rgb-tonal-secondary-90: 232 222 248;
+  --rgb-tonal-secondary-95: 246 237 255;
+  --rgb-tonal-secondary-99: 255 251 254;
+  --rgb-tonal-secondary-100: 255 255 255;
+
+  /* Tonal Tertiary */
+  --rgb-tonal-tertiary-0: 0 0 0;
+  --rgb-tonal-tertiary-10: 49 17 29;
+  --rgb-tonal-tertiary-20: 73 37 50;
+  --rgb-tonal-tertiary-30: 99 59 72;
+  --rgb-tonal-tertiary-40: 125 82 96;
+  --rgb-tonal-tertiary-50: 152 105 119;
+  --rgb-tonal-tertiary-60: 181 131 146;
+  --rgb-tonal-tertiary-70: 210 157 172;
+  --rgb-tonal-tertiary-80: 239 184 200;
+  --rgb-tonal-tertiary-90: 255 216 228;
+  --rgb-tonal-tertiary-95: 255 236 241;
+  --rgb-tonal-tertiary-99: 255 251 250;
+  --rgb-tonal-tertiary-100: 255 255 255;
+
+  /* Error */
+  --rgb-tonal-error-0: 0 0 0;
+  --rgb-tonal-error-10: 65 14 11;
+  --rgb-tonal-error-20: 96 20 16;
+  --rgb-tonal-error-30: 140 29 24;
+  --rgb-tonal-error-40: 179 38 30;
+  --rgb-tonal-error-50: 220 54 46;
+  --rgb-tonal-error-60: 228 105 98;
+  --rgb-tonal-error-70: 236 146 142;
+  --rgb-tonal-error-80: 242 184 181;
+  --rgb-tonal-error-90: 249 222 220;
+  --rgb-tonal-error-95: 252 238 238;
+  --rgb-tonal-error-99: 255 251 249;
+  --rgb-tonal-error-100: 255 255 255;
+
+  /* Neutral */
+  --rgb-tonal-neutral-0: 0 0 0;
+  --rgb-tonal-neutral-10: 29 27 32;
+  --rgb-tonal-neutral-20: 50 47 53;
+  --rgb-tonal-neutral-30: 72 70 76;
+  --rgb-tonal-neutral-40: 96 93 100;
+  --rgb-tonal-neutral-50: 121 118 125;
+  --rgb-tonal-neutral-60: 147 143 150;
+  --rgb-tonal-neutral-70: 174 169 177;
+  --rgb-tonal-neutral-80: 202 197 205;
+  --rgb-tonal-neutral-90: 230 224 233;
+  --rgb-tonal-neutral-95: 245 239 247;
+  --rgb-tonal-neutral-99: 255 251 255;
+  --rgb-tonal-neutral-100: 255 255 255;
+
+  /* Neutral Variant */
+  --rgb-tonal-neutral-variant-0: 0 0 0;
+  --rgb-tonal-neutral-variant-10: 29 26 34;
+  --rgb-tonal-neutral-variant-20: 50 47 55;
+  --rgb-tonal-neutral-variant-30: 73 69 79;
+  --rgb-tonal-neutral-variant-40: 96 93 102;
+  --rgb-tonal-neutral-variant-50: 121 116 126;
+  --rgb-tonal-neutral-variant-60: 147 143 153;
+  --rgb-tonal-neutral-variant-70: 174 169 180;
+  --rgb-tonal-neutral-variant-80: 202 196 208;
+  --rgb-tonal-neutral-variant-90: 231 224 236;
+  --rgb-tonal-neutral-variant-95: 245 238 250;
+  --rgb-tonal-neutral-variant-99: 255 251 254;
+  --rgb-tonal-neutral-variant-100: 255 255 255;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Primary */
+    --rgb-primary: var(--rgb-tonal-primary-40);
+    --rgb-on-primary: var(--rgb-tonal-primary-100);
+    --rgb-primary-container: var(--rgb-tonal-primary-90);
+    --rgb-on-primary-container: var(--rgb-tonal-primary-30);
+    --rgb-primary-fixed: var(--rgb-tonal-primary-90);
+    --rgb-primary-fixed-dim: var(--rgb-tonal-primary-80);
+    --rgb-on-primary-fixed: var(--rgb-tonal-primary-10);
+    --rgb-on-primary-fixed-variant: var(--rgb-tonal-primary-30);
+
+    /* Secondary */
+    --rgb-secondary: var(--rgb-tonal-secondary-40);
+    --rgb-on-secondary: var(--rgb-tonal-secondary-100);
+    --rgb-secondary-container: var(--rgb-tonal-secondary-90);
+    --rgb-on-secondary-container: var(--rgb-tonal-secondary-30);
+    --rgb-secondary-fixed: var(--rgb-tonal-secondary-90);
+    --rgb-secondary-fixed-dim: var(--rgb-tonal-secondary-80);
+    --rgb-on-secondary-fixed: var(--rgb-tonal-secondary-10);
+    --rgb-on-secondary-fixed-variant: var(--rgb-tonal-secondary-30);
+
+    /* Tertiary */
+    --rgb-tertiary: var(--rgb-tonal-tertiary-40);
+    --rgb-on-tertiary: var(--rgb-tonal-tertiary-100);
+    --rgb-tertiary-container: var(--rgb-tonal-tertiary-90);
+    --rgb-on-tertiary-container: var(--rgb-tonal-tertiary-30);
+    --rgb-tertiary-fixed: var(--rgb-tonal-tertiary-90);
+    --rgb-tertiary-fixed-dim: var(--rgb-tonal-tertiary-80);
+    --rgb-on-tertiary-fixed: var(--rgb-tonal-tertiary-10);
+    --rgb-on-tertiary-fixed-variant: var(--rgb-tonal-tertiary-30);
+
+    /* Error */
+    --rgb-error: var(--rgb-tonal-error-40);
+    --rgb-on-error: var(--rgb-tonal-error-100);
+    --rgb-error-container: var(--rgb-tonal-error-90);
+    --rgb-on-error-container: var(--rgb-tonal-error-30);
+
+    /* Surface */
+    --rgb-surface-dim: 222 216 225;
+    --rgb-surface: 254 247 255;
+    --rgb-surface-bright: 254 247 255;
+
+    --rgb-surface-container-lowest: var(--rgb-tonal-neutral-100);
+    --rgb-surface-container-low: 247 242 250;
+    --rgb-surface-container: 243 237 247;
+    --rgb-surface-container-high: 236 230 240;
+    --rgb-surface-container-highest: 230 224 233;
+
+    --rgb-on-surface: var(--rgb-tonal-neutral-10);
+    --rgb-on-surface-variant: var(--rgb-tonal-neutral-variant-30);
+    --rgb-outline: var(--rgb-tonal-neutral-variant-50);
+    --rgb-outline-variant: var(--rgb-tonal-neutral-variant-80);
+
+    --rgb-inverse-surface: var(--rgb-tonal-neutral-20);
+    --rgb-inverse-on-surface: var(--rgb-tonal-neutral-95);
+    --rgb-inverse-primary: var(--rgb-tonal-primary-80);
+    --rgb-scrim: var(--rgb-tonal-neutral-0);
+    --rgb-shadow: var(--rgb-tonal-neutral-0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Primary */
+    --rgb-primary: var(--rgb-tonal-primary-80);
+    --rgb-on-primary: var(--rgb-tonal-primary-20);
+    --rgb-primary-container: var(--rgb-tonal-primary-30);
+    --rgb-on-primary-container: var(--rgb-tonal-primary-90);
+    --rgb-primary-fixed: var(--rgb-tonal-primary-90);
+    --rgb-primary-fixed-dim: var(--rgb-tonal-primary-80);
+    --rgb-on-primary-fixed: var(--rgb-tonal-primary-10);
+    --rgb-on-primary-fixed-variant: var(--rgb-tonal-primary-30);
+
+    /* Secondary */
+    --rgb-secondary: var(--rgb-tonal-secondary-80);
+    --rgb-on-secondary: var(--rgb-tonal-secondary-20);
+    --rgb-secondary-container: var(--rgb-tonal-secondary-30);
+    --rgb-on-secondary-container: var(--rgb-tonal-secondary-90);
+    --rgb-secondary-fixed: var(--rgb-tonal-secondary-90);
+    --rgb-secondary-fixed-dim: var(--rgb-tonal-secondary-80);
+    --rgb-on-secondary-fixed: var(--rgb-tonal-secondary-10);
+    --rgb-on-secondary-fixed-variant: var(--rgb-tonal-secondary-30);
+
+    /* Tertiary */
+    --rgb-tertiary: var(--rgb-tonal-tertiary-80);
+    --rgb-on-tertiary: var(--rgb-tonal-tertiary-20);
+    --rgb-tertiary-container: var(--rgb-tonal-tertiary-30);
+    --rgb-on-tertiary-container: var(--rgb-tonal-tertiary-90);
+    --rgb-tertiary-fixed: var(--rgb-tonal-tertiary-90);
+    --rgb-tertiary-fixed-dim: var(--rgb-tonal-tertiary-80);
+    --rgb-on-tertiary-fixed: var(--rgb-tonal-tertiary-10);
+    --rgb-on-tertiary-fixed-variant: var(--rgb-tonal-tertiary-30);
+
+    /* Error */
+    --rgb-error: var(--rgb-tonal-error-80);
+    --rgb-on-error: var(--rgb-tonal-error-20);
+    --rgb-error-container: var(--rgb-tonal-error-30);
+    --rgb-on-error-container: var(--rgb-tonal-error-90);
+
+    /* Surface */
+    --rgb-surface-dim: 20 18 24;
+    --rgb-surface: 20 18 24;
+    --rgb-surface-bright: 59 56 62;
+
+    --rgb-surface-container-lowest: 15 13 19;
+    --rgb-surface-container-low: 29 27 32;
+    --rgb-surface-container: 33 31 38;
+    --rgb-surface-container-high: 43 41 48;
+    --rgb-surface-container-highest: 54 52 59;
+
+    --rgb-on-surface: var(--rgb-tonal-neutral-90);
+    --rgb-on-surface-variant: var(--rgb-tonal-neutral-variant-80);
+    --rgb-outline: var(--rgb-tonal-neutral-variant-60);
+    --rgb-outline-variant: var(--rgb-tonal-neutral-variant-30);
+
+    --rgb-inverse-surface: var(--rgb-tonal-neutral-90);
+    --rgb-inverse-on-surface: var(--rgb-tonal-neutral-20);
+    --rgb-inverse-primary: var(--rgb-tonal-primary-40);
+    --rgb-scrim: var(--rgb-tonal-neutral-0);
+    --rgb-shadow: var(--rgb-tonal-neutral-0);
+  }
+}
