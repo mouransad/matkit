@@ -1,5 +1,11 @@
 {
   "jsc": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/lib/components/*"],
+      "@icons/*": ["src/lib/icons/*"],
+      "@lib/*": ["src/lib/*"]
+    },
     "target": "es2018",
     "parser": {
       "syntax": "typescript",

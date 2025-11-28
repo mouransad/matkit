@@ -11,10 +11,11 @@
 
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["src/lib/*"],
       "@components/*": ["src/lib/components/*"],
-      "@icons/*": ["src/lib/icons/*"]
+      "@icons/*": ["src/lib/icons/*"],
+      "@lib/*": ["src/lib/*"]
     },
+    
     "stripInternal": true,
     "skipLibCheck": true
   },

@@ -1,12 +1,11 @@
 'use client';
 import type { ComponentProps, FC } from 'react';
-import styles from './styles.module.css';
-import clsx from 'clsx';
-
+import './styles.css';
+import { makeClass } from '@lib/sharedTools/makeClass';
 
 const Button: FC<ComponentProps<'button'>> = ({ children, className, ...props }) => {
     return (
-        <button {...props} className={clsx(styles.button, className)}>
+        <button {...props} className={makeClass("matkit-button", className)}>
             {children}
         </button>
     );
