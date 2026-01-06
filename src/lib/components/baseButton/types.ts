@@ -10,7 +10,6 @@ export interface SizeConfig {
   paddingX: string;
   gap: string;
   iconSize: string;
-  minWidth: string;
 }
 
 export interface ColorConfig {

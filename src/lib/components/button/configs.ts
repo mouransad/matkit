@@ -12,7 +12,6 @@ export const sizeConfigMap: Record<Size, BaseButtonProps["sizeConfig"]> = {
     paddingX: "12px",
     gap: "4px",
     iconSize: "1.25rem",
-    minWidth: "32px",
   },
   small: {
     borderRadiusEndEnd: "var(--border-radius-extra-small)",
@@ -24,7 +23,6 @@ export const sizeConfigMap: Record<Size, BaseButtonProps["sizeConfig"]> = {
     paddingX: "16px",
     gap: "8px",
     iconSize: "1.25rem",
-    minWidth: "40px",
   },
   medium: {
     borderRadiusEndEnd: "var(--border-radius-large)",
@@ -36,7 +34,6 @@ export const sizeConfigMap: Record<Size, BaseButtonProps["sizeConfig"]> = {
     paddingX: "24px",
     gap: "8px",
     iconSize: "1.5rem",
-    minWidth: "56px",
   },
   large: {
     borderRadiusEndEnd: "var(--border-radius-extra-large)",
@@ -48,7 +45,6 @@ export const sizeConfigMap: Record<Size, BaseButtonProps["sizeConfig"]> = {
     paddingX: "48px",
     gap: "12px",
     iconSize: "2rem",
-    minWidth: "96px",
   },
   xLarge: {
     borderRadiusEndEnd: "var(--border-radius-extra-large)",
@@ -60,11 +56,13 @@ export const sizeConfigMap: Record<Size, BaseButtonProps["sizeConfig"]> = {
     paddingX: "64px",
     gap: "16px",
     iconSize: "2.5rem",
-    minWidth: "136px",
   },
 };
 
-export const filledColorConfigMap: Record<Color, BaseButtonProps['colorConfig']> = {
+export const filledColorConfigMap: Record<
+  Color,
+  BaseButtonProps["colorConfig"]
+> = {
   primary: {
     background: "rgb(var(--rgb-primary))",
     color: "rgb(var(--rgb-on-primary))",
@@ -103,7 +101,10 @@ export const filledColorConfigMap: Record<Color, BaseButtonProps['colorConfig']>
   },
 };
 
-export const outlinedColorConfigMap: Record<Color, BaseButtonProps['colorConfig']> = {
+export const outlinedColorConfigMap: Record<
+  Color,
+  BaseButtonProps["colorConfig"]
+> = {
   primary: {
     background: "transparent",
     color: "rgb(var(--rgb-primary))",
@@ -142,46 +143,50 @@ export const outlinedColorConfigMap: Record<Color, BaseButtonProps['colorConfig'
   },
 };
 
-export const textColorConfigMap: Record<Color, BaseButtonProps['colorConfig']> = {
-  primary: {
-    background: "transparent",
-    color: "rgb(var(--rgb-primary))",
-    hoverBackground: "rgb(var(--rgb-primary) / 0.08)",
-    activeBackground: "rgb(var(--rgb-primary) / 0.16)",
-    disabledBackground: "transparent",
-    disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
-    borderColor: "transparent",
-  },
-  secondary: {
-    background: "transparent",
-    color: "rgb(var(--rgb-secondary))",
-    hoverBackground: "rgb(var(--rgb-secondary) / 0.08)",
-    activeBackground: "rgb(var(--rgb-secondary) / 0.16)",
-    disabledBackground: "transparent",
-    disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
-    borderColor: "transparent",
-  },
-  tertiary: {
-    background: "transparent",
-    color: "rgb(var(--rgb-tertiary))",
-    hoverBackground: "rgb(var(--rgb-tertiary) / 0.08)",
-    activeBackground: "rgb(var(--rgb-tertiary) / 0.16)",
-    disabledBackground: "transparent",
-    disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
-    borderColor: "transparent",
-  },
-  error: {
-    background: "transparent",
-    color: "rgb(var(--rgb-error))",
-    hoverBackground: "rgb(var(--rgb-error) / 0.08)",
-    activeBackground: "rgb(var(--rgb-error) / 0.16)",
-    disabledBackground: "transparent",
-    disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
-    borderColor: "transparent",
-  },
-};
+export const textColorConfigMap: Record<Color, BaseButtonProps["colorConfig"]> =
+  {
+    primary: {
+      background: "transparent",
+      color: "rgb(var(--rgb-primary))",
+      hoverBackground: "rgb(var(--rgb-primary) / 0.08)",
+      activeBackground: "rgb(var(--rgb-primary) / 0.16)",
+      disabledBackground: "transparent",
+      disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
+      borderColor: "transparent",
+    },
+    secondary: {
+      background: "transparent",
+      color: "rgb(var(--rgb-secondary))",
+      hoverBackground: "rgb(var(--rgb-secondary) / 0.08)",
+      activeBackground: "rgb(var(--rgb-secondary) / 0.16)",
+      disabledBackground: "transparent",
+      disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
+      borderColor: "transparent",
+    },
+    tertiary: {
+      background: "transparent",
+      color: "rgb(var(--rgb-tertiary))",
+      hoverBackground: "rgb(var(--rgb-tertiary) / 0.08)",
+      activeBackground: "rgb(var(--rgb-tertiary) / 0.16)",
+      disabledBackground: "transparent",
+      disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
+      borderColor: "transparent",
+    },
+    error: {
+      background: "transparent",
+      color: "rgb(var(--rgb-error))",
+      hoverBackground: "rgb(var(--rgb-error) / 0.08)",
+      activeBackground: "rgb(var(--rgb-error) / 0.16)",
+      disabledBackground: "transparent",
+      disabledColor: "rgb(var(--rgb-on-surface) / 0.38)",
+      borderColor: "transparent",
+    },
+  };
 
-export const tonalColorConfigMap: Record<Color, BaseButtonProps['colorConfig']> = {
+export const tonalColorConfigMap: Record<
+  Color,
+  BaseButtonProps["colorConfig"]
+> = {
   primary: {
     background: "rgb(var(--rgb-primary-container))",
     color: "rgb(var(--rgb-on-primary-container))",
@@ -220,7 +225,10 @@ export const tonalColorConfigMap: Record<Color, BaseButtonProps['colorConfig']> 
   },
 };
 
-export const elevatedColorConfigMap: Record<Color, BaseButtonProps['colorConfig']> = {
+export const elevatedColorConfigMap: Record<
+  Color,
+  BaseButtonProps["colorConfig"]
+> = {
   primary: {
     background: "rgb(var(--rgb-surface-container-low))",
     color: "rgb(var(--rgb-primary))",
@@ -262,7 +270,7 @@ export const elevatedColorConfigMap: Record<Color, BaseButtonProps['colorConfig'
 export const getColorConfig = (
   buttonType: Variant,
   color: Color
-): BaseButtonProps['colorConfig'] => {
+): BaseButtonProps["colorConfig"] => {
   switch (buttonType) {
     case "filled":
       return filledColorConfigMap[color];

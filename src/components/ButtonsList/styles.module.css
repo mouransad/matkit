@@ -4,9 +4,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1rem;
+  width: 100%;
 }
 
-.buttonVariantGroup {
+.variantGroup {
   width: 100%;
   overflow: auto;
   display: flex;
@@ -19,10 +20,20 @@
   padding: 1rem;
 }
 
+.variantGroup > span:first-child {
+  font-weight: 600;
+  min-width: 180px;
+}
+
 .buttonsGroup {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.7;
 }

@@ -44,7 +44,6 @@ const BaseButton: FC<BaseButtonProps> = (props) => {
     "--base-button-padding-x": sizeConfig.paddingX,
     "--base-button-gap": sizeConfig.gap,
     "--base-button-icon-size": sizeConfig.iconSize,
-    "--base-button-min-width": sizeConfig.minWidth,
     "--base-button-background": colorConfig.background,
     "--base-button-color": colorConfig.color,
     "--base-button-hover-background": colorConfig.hoverBackground,

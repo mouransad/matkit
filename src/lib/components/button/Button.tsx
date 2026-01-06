@@ -2,7 +2,8 @@ import type { FC } from "react";
 import type { ButtonProps } from "./types";
 import BaseButton from "@components/baseButton";
 import { sizeConfigMap, getColorConfig } from "./configs";
-
+import { makeClass } from "@lib/sharedTools/makeClass";
+import './styles.css'
 
 const Button: FC<ButtonProps> = (props) => {
     const {
@@ -13,22 +14,25 @@ const Button: FC<ButtonProps> = (props) => {
         startIcon,
         endIcon,
         children,
+        sizeConfig: propsSizeConfig,
+        colorConfig: propsColorConfig,
         ...restProps
     } = props;
 
-    const { borderRadiusEndEnd, borderRadiusEndStart, borderRadiusStartEnd, borderRadiusStartStart, ...restSizeConfig } = sizeConfigMap[size];
-    const colorConfig = getColorConfig(variant, color);
+    const sizeConfig = {
+        ...sizeConfigMap[size],
+        ...propsSizeConfig
+    };
+    const colorConfig = {
+        ...getColorConfig(variant, color),
+        ...propsColorConfig
+    };
 
     return (
         <BaseButton
             colorConfig={colorConfig}
-            sizeConfig={{
-                ...restSizeConfig,
-                borderRadiusEndEnd: round ? 'var(--border-radius-full)' : borderRadiusEndEnd,
-                borderRadiusEndStart: round ? 'var(--border-radius-full)' : borderRadiusEndStart,
-                borderRadiusStartEnd: round ? 'var(--border-radius-full)' : borderRadiusStartEnd,
-                borderRadiusStartStart: round ? 'var(--border-radius-full)' : borderRadiusStartStart,
-            }}
+            sizeConfig={sizeConfig}
+            className={makeClass({ ['matkit__button--round']: round })}
             {...restProps}
         >
             {startIcon}

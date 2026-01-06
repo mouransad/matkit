@@ -10,7 +10,6 @@
   border-end-start-radius: var(--base-button-border-end-start-radius);
   border-end-end-radius: var(--base-button-border-end-end-radius);
   min-height: var(--base-button-height);
-  min-width: var(--base-button-min-width);
   font-size: var(--base-button-font-size);
   padding-inline-start: var(--base-button-padding-x);
   padding-inline-end: var(--base-button-padding-x);
