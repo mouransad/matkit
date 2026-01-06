@@ -1,7 +1,27 @@
-.card {
-    background-color: rgb(var(--rgb-surface-container-low));
-    box-shadow: var(--elevation-1);
-    width: 400px;
-    height: 400px;
-    border-radius: 8px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.buttonVariantGroup {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.buttonsGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
 }

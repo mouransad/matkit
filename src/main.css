@@ -1,3 +1,7 @@
 body {
     background-color: rgb(var(--rgb-surface-container-lowest));
 }
+
+* {
+    box-sizing: border-box;
+}

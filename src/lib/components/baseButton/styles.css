@@ -1,0 +1,59 @@
+/* Base Button Styles */
+.matkit__base-button {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--base-button-gap);
+  border-start-start-radius: var(--base-button-border-start-start-radius);
+  border-start-end-radius: var(--base-button-border-start-end-radius);
+  border-end-start-radius: var(--base-button-border-end-start-radius);
+  border-end-end-radius: var(--base-button-border-end-end-radius);
+  min-height: var(--base-button-height);
+  min-width: var(--base-button-min-width);
+  font-size: var(--base-button-font-size);
+  padding-inline-start: var(--base-button-padding-x);
+  padding-inline-end: var(--base-button-padding-x);
+  cursor: pointer;
+  border: 1px solid var(--base-button-border-color);
+  background: var(--base-button-background);
+  color: var(--base-button-color);
+  font-family: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+/* Hover state */
+.matkit__base-button:hover:not(:disabled) {
+  background: var(--base-button-hover-background);
+}
+
+/* Active/pressed state */
+.matkit__base-button:active:not(:disabled) {
+  background: var(--base-button-active-background);
+}
+
+/* Focus state */
+.matkit__base-button:focus-visible {
+  outline: 2px solid rgb(var(--rgb-primary));
+  outline-offset: 2px;
+}
+
+/* Disabled state */
+.matkit__base-button:disabled,
+.matkit__base-button--disabled {
+  background: var(--base-button-disabled-background);
+  color: var(--base-button-disabled-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.matkit__base-button--round.matkit__base-button--icon-only {
+  border-radius: 50%;
+}

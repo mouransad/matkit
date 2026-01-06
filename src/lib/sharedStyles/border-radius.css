@@ -1,0 +1,11 @@
+:root {
+    --border-radius-extra-small: 4px;
+    --border-radius-small: 8px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 16px;
+    --border-radius-large-increased: 20px;
+    --border-radius-extra-large: 28px;
+    --border-radius-extra-large-increased: 32px;
+    --border-radius-extra-extra-large: 48px;
+    --border-radius-full: calc(infinity * 1px);
+}

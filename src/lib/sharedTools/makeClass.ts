@@ -1,5 +1,5 @@
-import clsx from "clsx";
+import clsx, { type ClassValue } from "clsx";
 
-export const makeClass: typeof clsx = (inputs) => {
-  return clsx("matkit", inputs);
+export const makeClass = (...inputs: ClassValue[]): string => {
+  return clsx("matkit", ...inputs);
 };
