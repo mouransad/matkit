@@ -113,7 +113,10 @@ export const standardToggleColorConfig: ToggleIconButtonColorConfig = {
 /**
  * Variant to color config mapping
  */
-export const variantColorConfigMap: Record<Variant, ToggleIconButtonColorConfig> = {
+export const variantColorConfigMap: Record<
+  Variant,
+  ToggleIconButtonColorConfig
+> = {
   filled: filledToggleColorConfig,
   tonal: tonalToggleColorConfig,
   outlined: outlinedToggleColorConfig,
@@ -125,7 +128,7 @@ export const variantColorConfigMap: Record<Variant, ToggleIconButtonColorConfig>
  */
 export const getToggleIconButtonColorConfig = (
   variant: Variant,
-  isSelected: boolean
+  isSelected: boolean,
 ): BaseButtonProps["colorConfig"] => {
   const config = variantColorConfigMap[variant];
   return isSelected ? config.selected : config.unselected;
