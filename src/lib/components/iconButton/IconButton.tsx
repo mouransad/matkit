@@ -12,12 +12,13 @@ const IconButton: FC<IconButtonProps> = (props) => {
         shape = 'round',
         children,
         style,
+        colorConfig: propsColorConfig,
         ...restProps
     } = props;
 
     // Note: color prop is currently unused as colorConfigMap only has 'primary'
     const sizeConfig = sizeConfigMap[size][widthType];
-    const colorConfig = colorConfigMap[variant].primary;
+    const colorConfig = propsColorConfig ?? colorConfigMap[variant].primary;
 
     const shapeStyles = shape === 'square' ? {
         '--border-radius-start-start': 'var(--border-radius-medium)',

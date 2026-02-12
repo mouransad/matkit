@@ -1,4 +1,5 @@
 import type { ComponentProps } from "react";
+import type { ColorConfig } from "@components/baseButton/types";
 
 export type Shape = "round" | "square";
 export type Size = "xSmall" | "small" | "medium" | "large" | "xLarge";
@@ -12,4 +13,5 @@ export interface IconButtonProps extends ComponentProps<"button"> {
   variant?: Variant;
   widthType?: WidthType;
   color?: Color;
+  colorConfig?: ColorConfig;
 }
