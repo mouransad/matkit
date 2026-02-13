@@ -7,14 +7,14 @@ export type Size = "small" | "medium" | "large";
 export interface TextFieldSlotProps {
   root?: ComponentProps<"div">;
   input?: ComponentProps<"input">;
+  textarea?: ComponentProps<"textarea">;
   label?: ComponentProps<"label">;
   helperText?: ComponentProps<"span">;
   leadingIcon?: ComponentProps<"span">;
   trailingIcon?: ComponentProps<"span">;
 }
 
-export interface TextFieldProps
-  extends Omit<ComponentProps<"input">, "size" | "color"> {
+type BaseTextFieldProps = {
   /** Visual variant of the text field */
   variant?: Variant;
   /** Color scheme */
@@ -35,4 +35,18 @@ export interface TextFieldProps
   trailingIcon?: ReactNode;
   /** Props for customizing internal slots */
   slotProps?: TextFieldSlotProps;
-}
+};
+
+export type TextFieldProps =
+  | (BaseTextFieldProps &
+      Omit<ComponentProps<"input">, "size" | "color"> & {
+        /** Whether the field should render as a textarea */
+        multiline?: false;
+      })
+  | (BaseTextFieldProps &
+      Omit<ComponentProps<"textarea">, "size" | "color"> & {
+        /** Whether the field should render as a textarea */
+        multiline: true;
+        /** Number of rows for the textarea */
+        rows?: number;
+      });

@@ -4,7 +4,7 @@ import { colorConfigMap, sizeConfigMap } from "./configs";
 import { makeClass } from "@lib/sharedTools/makeClass";
 import "./styles.css";
 
-const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
+const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldProps>((props, ref) => {
     const {
         variant = "outlined",
         color = "primary",
@@ -16,6 +16,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
         disabled = false,
         leadingIcon,
         trailingIcon,
+        multiline = false,
         slotProps = {},
         className,
         style,
@@ -36,14 +37,14 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
 
     const isError = error || Boolean(errorText);
 
-    const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setIsFocused(true);
-        onFocus?.(e);
+        onFocus?.(e as React.FocusEvent<HTMLInputElement> & React.FocusEvent<HTMLTextAreaElement>);
     };
 
-    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setIsFocused(false);
-        onBlur?.(e);
+        onBlur?.(e as React.FocusEvent<HTMLInputElement> & React.FocusEvent<HTMLTextAreaElement>);
     };
 
     const cssVariables = {
@@ -91,6 +92,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
             "matkit__text-field--focused": isFocused,
             "matkit__text-field--error": isError,
             "matkit__text-field--disabled": disabled,
+            "matkit__text-field--multiline": multiline,
             "matkit__text-field--has-leading-icon": Boolean(leadingIcon),
             "matkit__text-field--has-trailing-icon": Boolean(trailingIcon),
         },
@@ -130,21 +132,39 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
                     </span>
                 )}
 
-                <input
-                    {...restProps}
-                    {...slotProps.input}
-                    ref={ref}
-                    id={inputId}
-                    disabled={disabled}
-                    aria-invalid={isError}
-                    aria-describedby={helperText || errorText ? helperId : undefined}
-                    className={makeClass(
-                        "matkit__text-field__input",
-                        slotProps.input?.className
-                    )}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                />
+                {multiline ? (
+                    <textarea
+                        {...(restProps as React.ComponentProps<"textarea">)}
+                        {...slotProps.textarea}
+                        ref={ref as React.Ref<HTMLTextAreaElement>}
+                        id={inputId}
+                        disabled={disabled}
+                        aria-invalid={isError}
+                        aria-describedby={helperText || errorText ? helperId : undefined}
+                        className={makeClass(
+                            "matkit__text-field__textarea",
+                            slotProps.textarea?.className
+                        )}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                    />
+                ) : (
+                    <input
+                        {...(restProps as React.ComponentProps<"input">)}
+                        {...slotProps.input}
+                        ref={ref as React.Ref<HTMLInputElement>}
+                        id={inputId}
+                        disabled={disabled}
+                        aria-invalid={isError}
+                        aria-describedby={helperText || errorText ? helperId : undefined}
+                        className={makeClass(
+                            "matkit__text-field__input",
+                            slotProps.input?.className
+                        )}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                    />
+                )}
 
                 {trailingIcon && (
                     <span

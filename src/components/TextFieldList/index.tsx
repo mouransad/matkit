@@ -12,7 +12,7 @@ const TextFieldList: FC = () => {
   const [values, setValues] = useState<Record<string, string>>({});
 
   const handleChange =
-    (key: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setValues((prev) => ({ ...prev, [key]: e.target.value }));
     };
 
@@ -313,6 +313,112 @@ const TextFieldList: FC = () => {
             value={values["required"] ?? ""}
             onChange={handleChange("required")}
           />
+        </div>
+      </div>
+
+      {/* Multiline */}
+      <div className={styles.variantGroup}>
+        <span className={styles.groupTitle}>TextField - Multiline</span>
+
+        <div className={styles.fieldsGroup}>
+          <span className={styles.label}>Default</span>
+          {sizes.map((size) => (
+            <TextField
+              key={`multiline-${size}`}
+              multiline
+              color="primary"
+              size={size}
+              label="Description"
+              placeholder="Enter description..."
+              rows={3}
+              value={values[`multiline-${size}`] ?? ""}
+              onChange={handleChange(`multiline-${size}`)}
+            />
+          ))}
+        </div>
+
+        <div className={styles.fieldsGroup}>
+          <span className={styles.label}>With Helper</span>
+          {sizes.map((size) => (
+            <TextField
+              key={`multiline-helper-${size}`}
+              multiline
+              color="primary"
+              size={size}
+              label="Bio"
+              placeholder="Tell us about yourself..."
+              helperText="Max 500 characters"
+              rows={4}
+              value={values[`multiline-helper-${size}`] ?? ""}
+              onChange={handleChange(`multiline-helper-${size}`)}
+            />
+          ))}
+        </div>
+
+        <div className={styles.fieldsGroup}>
+          <span className={styles.label}>Error</span>
+          {sizes.map((size) => (
+            <TextField
+              key={`multiline-error-${size}`}
+              multiline
+              color="primary"
+              size={size}
+              label="Comment"
+              placeholder="Add a comment..."
+              error
+              errorText="Comment is too short"
+              rows={3}
+              value={values[`multiline-error-${size}`] ?? ""}
+              onChange={handleChange(`multiline-error-${size}`)}
+            />
+          ))}
+        </div>
+
+        <div className={styles.fieldsGroup}>
+          <span className={styles.label}>Disabled</span>
+          {sizes.map((size) => (
+            <TextField
+              key={`multiline-disabled-${size}`}
+              multiline
+              color="primary"
+              size={size}
+              label="Notes"
+              placeholder="Notes..."
+              rows={3}
+              disabled
+            />
+          ))}
+        </div>
+
+        <div className={styles.fieldsGroup}>
+          <span className={styles.label}>With Icons</span>
+          <TextField
+            multiline
+            color="primary"
+            label="Message"
+            placeholder="Type your message..."
+            leadingIcon={<CallIn />}
+            trailingIcon={<CallOut />}
+            rows={4}
+            value={values["multiline-icons"] ?? ""}
+            onChange={handleChange("multiline-icons")}
+          />
+        </div>
+
+        <div className={styles.fieldsGroup}>
+          <span className={styles.label}>Colors</span>
+          {colors.map((color) => (
+            <TextField
+              key={`multiline-color-${color}`}
+              multiline
+              color={color}
+              label={`${color} textarea`}
+              placeholder="Enter text..."
+              rows={3}
+              value={values[`multiline-color-${color}`] ?? ""}
+              onChange={handleChange(`multiline-color-${color}`)}
+            />
+          ))}
         </div>
       </div>
     </div>
