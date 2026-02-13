@@ -1,0 +1,103 @@
+/* Material 3 - Outlined Text Field */
+
+.matkit__text-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-gap);
+  width: 100%;
+}
+
+/* Label - positioned above input */
+.matkit__text-field__label {
+  font-size: var(--tf-label-font-size);
+  color: var(--tf-label-color);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.matkit__text-field--disabled .matkit__text-field__label {
+  color: var(--tf-label-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Container - holds input and icons */
+.matkit__text-field__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--tf-gap);
+  height: var(--tf-height);
+  background-color: var(--tf-background-color);
+  border: 1px solid var(--tf-border-color);
+  border-radius: var(--tf-border-radius);
+  padding-inline: var(--tf-padding-x);
+  transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: text;
+}
+
+.matkit__text-field:not(.matkit__text-field--disabled) .matkit__text-field__container:hover {
+  border-color: var(--tf-border-color-hover);
+}
+
+.matkit__text-field--focused .matkit__text-field__container {
+  border-width: 2px;
+  border-color: var(--tf-border-color);
+  /* Adjust padding to account for thicker border */
+  padding-inline: calc(var(--tf-padding-x) - 1px);
+}
+
+.matkit__text-field--disabled .matkit__text-field__container {
+  border-color: var(--tf-border-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Input */
+.matkit__text-field__input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--tf-font-size);
+  font-family: inherit;
+  color: var(--tf-input-color);
+  caret-color: var(--tf-caret-color);
+}
+
+.matkit__text-field__input::placeholder {
+  color: var(--tf-input-placeholder-color);
+}
+
+.matkit__text-field--disabled .matkit__text-field__input {
+  color: var(--tf-input-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Icons */
+.matkit__text-field__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--tf-icon-size);
+  height: var(--tf-icon-size);
+  color: var(--tf-label-color);
+}
+
+.matkit__text-field__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.matkit__text-field--disabled .matkit__text-field__icon {
+  color: var(--tf-label-color-disabled);
+}
+
+/* Helper text */
+.matkit__text-field__helper-text {
+  font-size: var(--tf-helper-font-size);
+  color: var(--tf-helper-color);
+  line-height: 1.4;
+}
