@@ -22,8 +22,6 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
         id: propId,
         onFocus,
         onBlur,
-        value,
-        defaultValue,
         ...restProps
     } = props;
 
@@ -32,15 +30,11 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     const helperId = `${inputId}-helper`;
 
     const [isFocused, setIsFocused] = useState(false);
-    const [hasValue, setHasValue] = useState(
-        Boolean(value ?? defaultValue)
-    );
 
     const colorConfig = colorConfigMap[color];
     const sizeConfig = sizeConfigMap[size];
 
     const isError = error || Boolean(errorText);
-    const showFloatingLabel = isFocused || hasValue;
 
     const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
         setIsFocused(true);
@@ -48,13 +42,8 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        setIsFocused(true);
+        setIsFocused(false);
         onBlur?.(e);
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setHasValue(e.target.value.length > 0);
-        props.onChange?.(e);
     };
 
     const cssVariables = {
@@ -102,7 +91,6 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
             "matkit__text-field--focused": isFocused,
             "matkit__text-field--error": isError,
             "matkit__text-field--disabled": disabled,
-            "matkit__text-field--has-value": hasValue,
             "matkit__text-field--has-leading-icon": Boolean(leadingIcon),
             "matkit__text-field--has-trailing-icon": Boolean(trailingIcon),
         },
@@ -115,6 +103,19 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
             className={rootClassName}
             style={{ ...cssVariables, ...style, ...slotProps.root?.style }}
         >
+            {label && (
+                <label
+                    {...slotProps.label}
+                    htmlFor={inputId}
+                    className={makeClass(
+                        "matkit__text-field__label",
+                        slotProps.label?.className
+                    )}
+                >
+                    {label}
+                </label>
+            )}
+
             <div className="matkit__text-field__container">
                 {leadingIcon && (
                     <span
@@ -129,42 +130,21 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
                     </span>
                 )}
 
-                <div className="matkit__text-field__input-wrapper">
-                    {label && (
-                        <label
-                            {...slotProps.label}
-                            htmlFor={inputId}
-                            className={makeClass(
-                                "matkit__text-field__label",
-                                {
-                                    "matkit__text-field__label--floating": showFloatingLabel,
-                                },
-                                slotProps.label?.className
-                            )}
-                        >
-                            {label}
-                        </label>
+                <input
+                    {...restProps}
+                    {...slotProps.input}
+                    ref={ref}
+                    id={inputId}
+                    disabled={disabled}
+                    aria-invalid={isError}
+                    aria-describedby={helperText || errorText ? helperId : undefined}
+                    className={makeClass(
+                        "matkit__text-field__input",
+                        slotProps.input?.className
                     )}
-
-                    <input
-                        {...restProps}
-                        {...slotProps.input}
-                        ref={ref}
-                        id={inputId}
-                        disabled={disabled}
-                        value={value}
-                        defaultValue={defaultValue}
-                        aria-invalid={isError}
-                        aria-describedby={helperText || errorText ? helperId : undefined}
-                        className={makeClass(
-                            "matkit__text-field__input",
-                            slotProps.input?.className
-                        )}
-                        onFocus={handleFocus}
-                        onBlur={handleBlur}
-                        onChange={handleChange}
-                    />
-                </div>
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                />
 
                 {trailingIcon && (
                     <span
@@ -178,17 +158,6 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
                         {trailingIcon}
                     </span>
                 )}
-
-                {/* Outlined border with notch for label */}
-                <fieldset className="matkit__text-field__fieldset">
-                    <legend
-                        className={makeClass("matkit__text-field__legend", {
-                            "matkit__text-field__legend--notched": showFloatingLabel && label,
-                        })}
-                    >
-                        {showFloatingLabel && label && <span>{label}</span>}
-                    </legend>
-                </fieldset>
             </div>
 
             {(helperText || errorText) && (
