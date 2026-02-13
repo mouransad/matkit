@@ -1,6 +1,7 @@
 import Provider from "@components/provider/Provider";
 import styles from "./styles.module.css";
 import TextFieldList from "./components/TextFieldList";
+import SelectList from "./components/SelectList";
 import ToggleIconButtonsList from "./components/ToggleIconButtonsList";
 import IconButtonsList from "./components/IconButtonsList";
 import ToggleButtonsList from "./components/ToggleButtonsList";
@@ -12,6 +13,9 @@ function App() {
       <div className={styles.container}>
         <h2 style={{ marginTop: "2rem" }}>TextFields</h2>
         <TextFieldList />
+
+        <h2 style={{ marginTop: "2rem" }}>Selects</h2>
+        <SelectList />
 
         <h2 style={{ marginTop: "2rem" }}>Buttons</h2>
         <ButtonsList />
