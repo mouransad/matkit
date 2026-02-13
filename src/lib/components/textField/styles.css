@@ -95,6 +95,43 @@
   color: var(--tf-label-color-disabled);
 }
 
+/* Textarea */
+.matkit__text-field__textarea {
+  flex: 1;
+  min-width: 0;
+  min-height: 100%;
+  padding: var(--tf-padding-x) 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--tf-font-size);
+  font-family: inherit;
+  color: var(--tf-input-color);
+  caret-color: var(--tf-caret-color);
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.matkit__text-field__textarea::placeholder {
+  color: var(--tf-input-placeholder-color);
+}
+
+.matkit__text-field--disabled .matkit__text-field__textarea {
+  color: var(--tf-input-color-disabled);
+  cursor: not-allowed;
+}
+
+/* Multiline container adjustments */
+.matkit__text-field--multiline .matkit__text-field__container {
+  height: auto;
+  min-height: var(--tf-height);
+  align-items: flex-start;
+}
+
+.matkit__text-field--multiline .matkit__text-field__icon {
+  margin-top: var(--tf-padding-x);
+}
+
 /* Helper text */
 .matkit__text-field__helper-text {
   font-size: var(--tf-helper-font-size);
