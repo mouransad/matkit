@@ -20,15 +20,6 @@ export const Option = ({ value, disabled = false, children, className }: OptionP
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      if (!disabled) {
-        onSelect(value);
-      }
-    }
-  };
-
   return (
     <div
       role="option"
@@ -45,7 +36,6 @@ export const Option = ({ value, disabled = false, children, className }: OptionP
         className
       )}
       onClick={handleClick}
-      onKeyDown={handleKeyDown}
       data-value={value}
     >
       {children}
