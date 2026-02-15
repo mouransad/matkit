@@ -6,11 +6,15 @@ import ToggleIconButtonsList from "./components/ToggleIconButtonsList";
 import IconButtonsList from "./components/IconButtonsList";
 import ToggleButtonsList from "./components/ToggleButtonsList";
 import ButtonsList from "./components/ButtonsList";
+import CheckboxList from "./components/CheckboxList";
 
 function App() {
   return (
     <Provider>
       <div className={styles.container}>
+        <h2 style={{ marginTop: "2rem" }}>Checkboxes</h2>
+        <CheckboxList />
+
         <h2 style={{ marginTop: "2rem" }}>TextFields</h2>
         <TextFieldList />
 
