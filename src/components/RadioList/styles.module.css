@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.variantGroup {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  border: 1px solid rgb(var(--rgb-outline-variant));
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.7;
+}

@@ -7,11 +7,15 @@ import IconButtonsList from "./components/IconButtonsList";
 import ToggleButtonsList from "./components/ToggleButtonsList";
 import ButtonsList from "./components/ButtonsList";
 import CheckboxList from "./components/CheckboxList";
+import RadioList from "./components/RadioList";
 
 function App() {
   return (
     <Provider>
       <div className={styles.container}>
+        <h2 style={{ marginTop: "2rem" }}>Radios</h2>
+        <RadioList />
+
         <h2 style={{ marginTop: "2rem" }}>Checkboxes</h2>
         <CheckboxList />
 
