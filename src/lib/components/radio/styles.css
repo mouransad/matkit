@@ -1,0 +1,154 @@
+/* Radio Button Styles */
+.matkit__radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--radio-gap, 12px);
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.matkit__radio--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.matkit__radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.matkit__radio__circle-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--radio-state-layer-size, 40px);
+  height: var(--radio-state-layer-size, 40px);
+  flex-shrink: 0;
+}
+
+.matkit__radio__state-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 150ms ease-in-out;
+}
+
+/* Hover state */
+.matkit__radio:hover .matkit__radio__state-layer {
+  background-color: var(--radio-hover-state-layer);
+}
+
+/* Active/pressed state */
+.matkit__radio:active .matkit__radio__state-layer {
+  background-color: var(--radio-active-state-layer);
+}
+
+/* Focus state */
+.matkit__radio__input:focus-visible ~ .matkit__radio__circle-container .matkit__radio__state-layer {
+  background-color: var(--radio-focus-state-layer);
+}
+
+/* Checked hover state - use primary color for state layer */
+.matkit__radio:hover .matkit__radio__input:checked ~ .matkit__radio__circle-container .matkit__radio__state-layer {
+  background-color: var(--radio-checked-hover-state-layer);
+}
+
+.matkit__radio__outer-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--radio-outer-size, 20px);
+  height: var(--radio-outer-size, 20px);
+  border: var(--radio-border-width, 2px) solid var(--radio-border-color);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: border-color 150ms ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Checked state - outer circle */
+.matkit__radio__input:checked ~ .matkit__radio__circle-container .matkit__radio__outer-circle {
+  border-color: var(--radio-checked-border-color);
+}
+
+/* Disabled state - outer circle */
+.matkit__radio--disabled .matkit__radio__outer-circle {
+  border-color: var(--radio-disabled-border-color);
+}
+
+.matkit__radio--disabled .matkit__radio__input:checked ~ .matkit__radio__circle-container .matkit__radio__outer-circle {
+  border-color: var(--radio-disabled-checked-border-color);
+}
+
+/* Disabled state layer (no hover/focus) */
+.matkit__radio--disabled .matkit__radio__state-layer {
+  display: none;
+}
+
+.matkit__radio__inner-dot {
+  width: var(--radio-inner-size, 10px);
+  height: var(--radio-inner-size, 10px);
+  border-radius: 50%;
+  background-color: var(--radio-checked-dot-color);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.matkit__radio__input:checked ~ .matkit__radio__circle-container .matkit__radio__outer-circle .matkit__radio__inner-dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Disabled inner dot color */
+.matkit__radio--disabled .matkit__radio__input:checked ~ .matkit__radio__circle-container .matkit__radio__outer-circle .matkit__radio__inner-dot {
+  background-color: var(--radio-disabled-checked-dot-color);
+}
+
+.matkit__radio__label {
+  font-size: var(--radio-label-font-size, 16px);
+  line-height: 1.5;
+  color: rgb(var(--rgb-on-surface));
+}
+
+.matkit__radio--disabled .matkit__radio__label {
+  color: rgb(var(--rgb-on-surface) / 0.38);
+}
+
+/* RadioGroup Styles */
+.matkit__radio-group {
+  display: flex;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.matkit__radio-group--vertical {
+  flex-direction: column;
+}
+
+.matkit__radio-group--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.matkit__radio-group__legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(var(--rgb-on-surface-variant));
+}
+
+.matkit__radio-group__legend:empty {
+  display: none;
+}
