@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.variantGroup {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid rgb(var(--rgb-outline-variant));
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.variantGroup > span:first-child {
+  font-weight: 600;
+  min-width: 180px;
+}
+
+.collapseGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.collapseContent {
+  padding: 1rem;
+  background: rgb(var(--rgb-surface-container));
+  border-radius: 8px;
+  width: 100%;
+}
+
+.toggleButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid rgb(var(--rgb-outline));
+  background: rgb(var(--rgb-surface));
+  cursor: pointer;
+}
+
+.toggleButton:hover {
+  background: rgb(var(--rgb-surface-container));
+}
