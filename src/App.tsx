@@ -9,11 +9,15 @@ import ButtonsList from "./components/ButtonsList";
 import CheckboxList from "./components/CheckboxList";
 import RadioList from "./components/RadioList";
 import CollapseList from "./components/CollapseList";
+import AccordionList from "./components/AccordionList";
 
 function App() {
   return (
     <Provider>
       <div className={styles.container}>
+        <h2 style={{ marginTop: "2rem" }}>Accordion</h2>
+        <AccordionList />
+
         <h2 style={{ marginTop: "2rem" }}>Collapse</h2>
         <CollapseList />
 

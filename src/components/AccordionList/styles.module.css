@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.variantGroup {
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid rgb(var(--rgb-outline-variant));
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.variantGroup > span:first-child {
+  font-weight: 600;
+  font-size: 14px;
+  color: rgb(var(--rgb-primary));
+}
+
+.accordionContent {
+  line-height: 1.5;
+}
+
+.label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.row > * {
+  flex: 1;
+  min-width: 250px;
+}
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius-small);
+  background-color: rgb(var(--rgb-primary));
+  color: rgb(var(--rgb-on-primary));
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.button:hover {
+  background-color: rgb(var(--rgb-primary) / 0.88);
+}
+
+.complexContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.complexContent h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.complexContent p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.complexContent ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: 1.75;
+}
+
+.inlineButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.customAccordion {
+  box-shadow: var(--elevation-2);
+  border: 2px dashed rgb(var(--rgb-primary));
+}
