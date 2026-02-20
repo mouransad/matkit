@@ -15,12 +15,12 @@ const Collapse: FC<CollapseProps> = (props) => {
 
   const [show, setShow] = useState(open);
 
-  const showTimeoutRef = useRef<number | null>(null);
+  const showTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentsRef = useRef<HTMLDivElement>(null);
 
-  const resizeTimeoutRef = useRef<number | null>(null);
+  const resizeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [contentHeight, setContentHeight] = useState(0);
 
   useEffect(() => {
