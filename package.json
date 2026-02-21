@@ -14,7 +14,9 @@
     "build-cjs:lib": "swc src/lib/* -d . --strip-leading-paths --config-file .cjs.swcrc --out-file-extension cjs",
     "build-ts:lib": "npm run build-esm:lib && npm run build-cjs:lib && tsc --emitDeclarationOnly -p tsconfig.lib.json",
     "copy-css:lib": "cpy \"src/lib/**/*.css\" lib --parents",
-    "build:lib": "npm run clean:lib && npm run build:icons && npm run build-ts:lib && npm run copy-css:lib"
+    "build:lib": "npm run clean:lib && npm run build:icons && npm run build-ts:lib && npm run copy-css:lib",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "clsx": "^2.1.1"
@@ -25,6 +27,12 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/addon-links": "^8.6.17",
+    "@storybook/react": "^8.6.17",
+    "@storybook/react-vite": "^8.6.17",
+    "@storybook/test": "^8.6.15",
     "@svgr/cli": "^8.1.0",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
@@ -40,6 +48,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "storybook": "^8.6.17",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"

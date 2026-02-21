@@ -4,7 +4,7 @@
     "paths": {
       "@components/*": ["src/lib/components/*"],
       "@icons/*": ["src/lib/icons/*"],
-      "@lib/*": ["src/lib/*"],
+      "@lib/*": ["src/lib/*"]
     },
     "target": "es2018",
     "parser": {
