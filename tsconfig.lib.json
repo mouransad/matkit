@@ -15,9 +15,10 @@
       "@icons/*": ["src/lib/icons/*"],
       "@lib/*": ["src/lib/*"]
     },
-    
+
     "stripInternal": true,
     "skipLibCheck": true
   },
-  "include": ["src/lib", "types"]
+  "include": ["src/lib", "types"],
+  "exclude": ["src/**/*.stories.ts", "src/**/*.stories.tsx"]
 }

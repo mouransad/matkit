@@ -21,5 +21,6 @@
   },
   "module": {
     "type": "es6"
-  }
+  },
+  "exclude": [".*\\.stories\\.(js|ts|jsx|tsx)$"]
 }

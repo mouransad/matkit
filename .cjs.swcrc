@@ -21,5 +21,6 @@
   },
   "module": {
     "type": "commonjs"
-  }
+  },
+  "exclude": [".*\\.stories\\.(js|ts|jsx|tsx)$"]
 }
