@@ -3,7 +3,7 @@ import type { AccordionProps, AccordionSizeConfig, AccordionColorConfig } from "
 import { useState, useCallback, useContext, useMemo } from "react";
 import Collapse from "@components/collapse";
 import ChevronDown from "@lib/icons/ChevronDown";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import { AccordionGroupContext } from "./context";
 import { getSizeConfig, getColorConfig } from "./configs";
 import "./styles.css";

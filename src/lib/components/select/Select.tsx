@@ -11,7 +11,7 @@ import {
 import type { SelectProps, OptionProps, OptionGroupProps, SelectContextValue } from "./types";
 import { SelectContext } from "./SelectContext";
 import { colorConfigMap, sizeConfigMap } from "./configs";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import "./styles.css";
 
 // Chevron down icon

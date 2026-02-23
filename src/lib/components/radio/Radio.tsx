@@ -1,5 +1,5 @@
 import type { FC, CSSProperties } from "react";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import { getColorConfig, getSizeConfig } from "./configs";
 import { useRadioGroup } from "./RadioGroupContext";
 import type { RadioProps } from "./types";

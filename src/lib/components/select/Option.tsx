@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import type { OptionProps } from "./types";
 import { SelectContext } from "./SelectContext";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 
 export const Option = ({ value, disabled = false, children, className }: OptionProps) => {
   const context = useContext(SelectContext);
