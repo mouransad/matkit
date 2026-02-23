@@ -1,6 +1,6 @@
 import { Children, cloneElement, isValidElement } from "react";
 import type { OptionGroupProps, OptionProps } from "./types";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 
 export const OptionGroup = ({ label, disabled = false, children, className }: OptionGroupProps) => {
   // Pass disabled state to child options

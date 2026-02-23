@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { AccordionGroupProps, AccordionContextValue } from "./types";
 import { useState, useCallback, useMemo } from "react";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import { AccordionGroupContext } from "./context";
 import "./styles.css";
 

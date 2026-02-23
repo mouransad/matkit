@@ -1,6 +1,6 @@
 import type { FC, CSSProperties } from "react";
 import { useRef, useEffect } from "react";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import { getColorConfig, getSizeConfig } from "./configs";
 import type { CheckboxProps } from "./types";
 import "./styles.css";

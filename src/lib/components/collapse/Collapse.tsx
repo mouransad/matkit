@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { CollapseProps } from "./types";
 import { useEffect, useRef, useState } from "react";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import "./styles.css";
 
 const Collapse: FC<CollapseProps> = (props) => {

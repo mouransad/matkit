@@ -1,5 +1,5 @@
-import Provider from "@components/provider/Provider";
 import styles from "./styles.module.css";
+import Provider from "@components/provider/Provider";
 import TextFieldList from "./components/TextFieldList";
 import SelectList from "./components/SelectList";
 import ToggleIconButtonsList from "./components/ToggleIconButtonsList";

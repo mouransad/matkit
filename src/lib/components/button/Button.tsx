@@ -2,7 +2,7 @@ import type { FC } from "react";
 import type { ButtonProps } from "./types";
 import BaseButton from "@components/baseButton";
 import { sizeConfigMap, getColorConfig } from "./configs";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import './styles.css'
 
 const Button: FC<ButtonProps> = (props) => {

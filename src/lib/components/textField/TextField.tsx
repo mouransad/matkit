@@ -1,7 +1,7 @@
 import { forwardRef, useId, useState, type CSSProperties } from "react";
 import type { TextFieldProps } from "./types";
 import { colorConfigMap, sizeConfigMap } from "./configs";
-import { makeClass } from "@lib/sharedTools/makeClass";
+import { makeClass } from "@lib/internal-tools/makeClass";
 import "./styles.css";
 
 const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldProps>((props, ref) => {
