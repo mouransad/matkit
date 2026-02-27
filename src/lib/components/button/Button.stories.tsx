@@ -84,24 +84,6 @@ export const Text: Story = {
   },
 };
 
-export const Small: Story = {
-  args: {
-    children: "Small Button",
-    size: "small",
-    color: "primary",
-    variant: "filled",
-  },
-};
-
-export const Large: Story = {
-  args: {
-    children: "Large Button",
-    size: "large",
-    color: "primary",
-    variant: "filled",
-  },
-};
-
 export const Round: Story = {
   args: {
     children: "Round",

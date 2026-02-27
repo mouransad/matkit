@@ -75,38 +75,6 @@ export const Disabled: Story = {
   },
 };
 
-export const Small: Story = {
-  args: {
-    label: 'Small Size',
-    size: 'small',
-    placeholder: 'Small input',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    label: 'Medium Size',
-    size: 'medium',
-    placeholder: 'Medium input',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    label: 'Large Size',
-    size: 'large',
-    placeholder: 'Large input',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    label: 'Secondary Color',
-    color: 'secondary',
-    placeholder: 'Secondary color',
-  },
-};
-
 export const Tertiary: Story = {
   args: {
     label: 'Tertiary Color',
