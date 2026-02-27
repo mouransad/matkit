@@ -1,30 +1,30 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Accordion, AccordionGroup } from './index';
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Accordion, AccordionGroup } from "./index";
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Components/Accordion',
+  title: "Components/Accordion",
   component: Accordion,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     color: {
-      control: 'select',
-      options: ['primary', 'secondary', 'error'],
+      control: "select",
+      options: ["primary", "secondary", "error"],
     },
     size: {
-      control: 'select',
-      options: ['small', 'medium', 'large'],
+      control: "select",
+      options: ["small", "medium", "large"],
     },
     disabled: {
-      control: 'boolean',
+      control: "boolean",
     },
     expanded: {
-      control: 'boolean',
+      control: "boolean",
     },
     defaultExpanded: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
 };
@@ -32,9 +32,9 @@ const meta: Meta<typeof Accordion> = {
 export default meta;
 type Story = StoryObj<typeof Accordion>;
 
-export const Default: Story = {
+export const Primary: Story = {
   args: {
-    header: 'Accordion Header',
+    header: "Accordion Header",
     children: (
       <div>
         <p>This is the accordion content. It can be expanded or collapsed.</p>
@@ -43,24 +43,10 @@ export const Default: Story = {
   },
 };
 
-export const Expanded: Story = {
-  args: {
-    header: 'Expanded Accordion',
-    defaultExpanded: true,
-    children: (
-      <div>
-        <p>This accordion is expanded by default.</p>
-        <p>It contains multiple paragraphs of content.</p>
-      </div>
-    ),
-  },
-};
-
 export const Secondary: Story = {
   args: {
-    header: 'Secondary Accordion',
-    color: 'secondary',
-    defaultExpanded: true,
+    header: "Secondary Accordion",
+    color: "secondary",
     children: (
       <div>
         <p>This accordion uses the secondary color scheme.</p>
@@ -71,63 +57,11 @@ export const Secondary: Story = {
 
 export const Error: Story = {
   args: {
-    header: 'Error Accordion',
-    color: 'error',
-    defaultExpanded: true,
+    header: "Error Accordion",
+    color: "error",
     children: (
       <div>
-        <p>This accordion uses the error color scheme for important warnings.</p>
-      </div>
-    ),
-  },
-};
-
-export const Small: Story = {
-  args: {
-    header: 'Small Accordion',
-    size: 'small',
-    defaultExpanded: true,
-    children: (
-      <div>
-        <p>This is a small-sized accordion with compact spacing.</p>
-      </div>
-    ),
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    header: 'Medium Accordion',
-    size: 'medium',
-    defaultExpanded: true,
-    children: (
-      <div>
-        <p>This is a medium-sized accordion with standard spacing.</p>
-      </div>
-    ),
-  },
-};
-
-export const Large: Story = {
-  args: {
-    header: 'Large Accordion',
-    size: 'large',
-    defaultExpanded: true,
-    children: (
-      <div>
-        <p>This is a large-sized accordion with generous spacing.</p>
-      </div>
-    ),
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    header: 'Disabled Accordion',
-    disabled: true,
-    children: (
-      <div>
-        <p>This accordion is disabled and cannot be toggled.</p>
+        <p>This accordion uses the error color.</p>
       </div>
     ),
   },
@@ -135,13 +69,15 @@ export const Disabled: Story = {
 
 export const WithRichContent: Story = {
   args: {
-    header: 'Rich Content Accordion',
+    header: "Rich Content Accordion",
     defaultExpanded: true,
     children: (
-      <div style={{ padding: '8px 0' }}>
-        <h4 style={{ margin: '0 0 8px 0' }}>Section Title</h4>
-        <p style={{ margin: '0 0 8px 0' }}>This accordion contains rich content including:</p>
-        <ul style={{ margin: '0 0 8px 0', paddingLeft: '20px' }}>
+      <div style={{ padding: "8px 0" }}>
+        <h4 style={{ margin: "0 0 8px 0" }}>Section Title</h4>
+        <p style={{ margin: "0 0 8px 0" }}>
+          This accordion contains rich content including:
+        </p>
+        <ul style={{ margin: "0 0 8px 0", paddingLeft: "20px" }}>
           <li>Bullet points</li>
           <li>Multiple elements</li>
           <li>Formatted text</li>
@@ -154,7 +90,7 @@ export const WithRichContent: Story = {
 
 export const CustomTransitionDelay: Story = {
   args: {
-    header: 'Slow Transition',
+    header: "Slow Transition",
     transitionDelay: 1000,
     children: (
       <div>
@@ -166,23 +102,26 @@ export const CustomTransitionDelay: Story = {
 
 // AccordionGroup stories
 const AccordionGroupMeta: Meta<typeof AccordionGroup> = {
-  title: 'Components/AccordionGroup',
+  title: "Components/AccordionGroup",
   component: AccordionGroup,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     exclusive: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
 };
 
-export const GroupDefault: StoryObj<typeof AccordionGroup> = {
+type AccordionGroupStory = StoryObj<typeof AccordionGroupMeta>;
+
+export const GroupDefault: AccordionGroupStory = {
   ...AccordionGroupMeta,
+  storyName: "Accordion Group",
   render: (args) => (
-    <div style={{ width: '500px' }}>
+    <div style={{ width: "500px" }}>
       <AccordionGroup {...args}>
         <Accordion value="panel1" header="Accordion 1">
           <p>Content for the first accordion panel.</p>
@@ -196,13 +135,13 @@ export const GroupDefault: StoryObj<typeof AccordionGroup> = {
       </AccordionGroup>
     </div>
   ),
-  args: {},
 };
 
-export const GroupExclusive: StoryObj<typeof AccordionGroup> = {
+export const GroupExclusive: AccordionGroupStory = {
   ...AccordionGroupMeta,
+  storyName: "Accordion Group Exclusive",
   render: (args) => (
-    <div style={{ width: '500px' }}>
+    <div style={{ width: "500px" }}>
       <AccordionGroup {...args}>
         <Accordion value="panel1" header="Panel 1 (Exclusive)">
           <p>Only one panel can be open at a time in exclusive mode.</p>
@@ -218,14 +157,15 @@ export const GroupExclusive: StoryObj<typeof AccordionGroup> = {
   ),
   args: {
     exclusive: true,
-    defaultExpanded: 'panel1',
+    defaultExpanded: "panel1",
   },
 };
 
-export const GroupWithDefaultExpanded: StoryObj<typeof AccordionGroup> = {
+export const GroupWithDefaultExpanded: AccordionGroupStory = {
   ...AccordionGroupMeta,
+  storyName: "Accordion Group Default Expanded",
   render: (args) => (
-    <div style={{ width: '500px' }}>
+    <div style={{ width: "500px" }}>
       <AccordionGroup {...args}>
         <Accordion value="faq1" header="What is this component?">
           <p>This is an accordion component that can expand and collapse.</p>
@@ -240,14 +180,15 @@ export const GroupWithDefaultExpanded: StoryObj<typeof AccordionGroup> = {
     </div>
   ),
   args: {
-    defaultExpanded: ['faq1', 'faq3'],
+    defaultExpanded: ["faq1", "faq3"],
   },
 };
 
-export const GroupWithVariousSizes: StoryObj<typeof AccordionGroup> = {
+export const GroupWithVariousSizes: AccordionGroupStory = {
   ...AccordionGroupMeta,
+  storyName: "Accordion Group With Various Sizes",
   render: (args) => (
-    <div style={{ width: '500px' }}>
+    <div style={{ width: "500px" }}>
       <AccordionGroup {...args}>
         <Accordion value="small" header="Small Accordion" size="small">
           <p>This accordion has a small size.</p>
@@ -262,6 +203,6 @@ export const GroupWithVariousSizes: StoryObj<typeof AccordionGroup> = {
     </div>
   ),
   args: {
-    defaultExpanded: ['small', 'medium', 'large'],
+    defaultExpanded: ["small", "medium", "large"],
   },
 };
