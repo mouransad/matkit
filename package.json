@@ -29,11 +29,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/addon-interactions": "^8.6.14",
-    "@storybook/addon-links": "^8.6.17",
-    "@storybook/react": "^8.6.17",
-    "@storybook/react-vite": "^8.6.17",
+    "@storybook/addon-links": "^10.2.12",
+    "@storybook/react": "^10.2.12",
+    "@storybook/react-vite": "^10.2.12",
     "@storybook/test": "^8.6.15",
     "@svgr/cli": "^8.1.0",
     "@svgr/core": "^8.1.0",
@@ -54,11 +52,13 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "jsdom": "^28.1.0",
-    "storybook": "^8.6.17",
+    "storybook": "^10.2.12",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4",
-    "vitest": "^4.0.18"
+    "vitest": "^4.0.18",
+    "eslint-plugin-storybook": "10.2.12",
+    "@storybook/addon-docs": "^10.2.12"
   },
   "imports": {
     "@components": "src/lib/components"

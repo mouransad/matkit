@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import TextField from './TextField';
 
 const meta: Meta<typeof TextField> = {
@@ -40,7 +40,7 @@ export const Default: Story = {
   args: {
     label: 'Label',
     placeholder: 'Enter text...',
-  },
+  }
 };
 
 export const WithValue: Story = {

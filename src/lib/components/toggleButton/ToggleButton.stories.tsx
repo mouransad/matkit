@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { useState } from "react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useCallback, useState } from "react";
 import ToggleButton from "./ToggleButton";
+import type { ToggleButtonProps } from "./types";
 
 const meta: Meta<typeof ToggleButton> = {
   title: "Components/ToggleButton",
@@ -31,162 +32,50 @@ const meta: Meta<typeof ToggleButton> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof ToggleButton>;
 
-export const UnselectedFilled: Story = {
+const ToggleButtonDemo = (args: ToggleButtonProps) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const toggleSelect = useCallback(() => {
+    setIsSelected((currentIsSelected) => !currentIsSelected);
+  }, []);
+
+  return (
+    <ToggleButton {...args} isSelected={isSelected} onClick={toggleSelect} />
+  );
+};
+
+export const Filled: Story = {
+  render: ToggleButtonDemo,
   args: {
-    children: "Toggle Button",
-    isSelected: false,
     variant: "filled",
+    children: "Toggle Button",
   },
 };
 
-export const SelectedFilled: Story = {
+export const Tonal: Story = {
+  render: ToggleButtonDemo,
   args: {
     children: "Toggle Button",
-    isSelected: true,
-    variant: "filled",
-  },
-};
-
-export const UnselectedTonal: Story = {
-  args: {
-    children: "Toggle Button",
-    isSelected: false,
     variant: "tonal",
   },
 };
 
-export const SelectedTonal: Story = {
+export const Outline: Story = {
+  render: ToggleButtonDemo,
   args: {
     children: "Toggle Button",
-    isSelected: true,
-    variant: "tonal",
-  },
-};
-
-export const UnselectedOutline: Story = {
-  args: {
-    children: "Toggle Button",
-    isSelected: false,
     variant: "outline",
   },
 };
 
-export const SelectedOutline: Story = {
+export const Elevated: Story = {
+  render: ToggleButtonDemo,
   args: {
     children: "Toggle Button",
-    isSelected: true,
-    variant: "outline",
-  },
-};
-
-export const UnselectedElevated: Story = {
-  args: {
-    children: "Toggle Button",
-    isSelected: false,
     variant: "elevated",
-  },
-};
-
-export const SelectedElevated: Story = {
-  args: {
-    children: "Toggle Button",
-    isSelected: true,
-    variant: "elevated",
-  },
-};
-
-export const Interactive: Story = {
-  render: function Render(args) {
-    const [isSelected, setIsSelected] = useState(false);
-    return (
-      <ToggleButton
-        {...args}
-        isSelected={isSelected}
-        onClick={() => setIsSelected(!isSelected)}
-      >
-        {isSelected ? "Selected" : "Unselected"}
-      </ToggleButton>
-    );
-  },
-  args: {
-    variant: "filled",
-  },
-};
-
-export const Small: Story = {
-  render: function Render(args) {
-    const [isSelected, setIsSelected] = useState(false);
-    return (
-      <ToggleButton
-        {...args}
-        isSelected={isSelected}
-        onClick={() => setIsSelected(!isSelected)}
-      >
-        Small
-      </ToggleButton>
-    );
-  },
-  args: {
-    size: "small",
-    variant: "filled",
-  },
-};
-
-export const Large: Story = {
-  render: function Render(args) {
-    const [isSelected, setIsSelected] = useState(false);
-    return (
-      <ToggleButton
-        {...args}
-        isSelected={isSelected}
-        onClick={() => setIsSelected(!isSelected)}
-      >
-        Large
-      </ToggleButton>
-    );
-  },
-  args: {
-    size: "large",
-    variant: "filled",
-  },
-};
-
-export const Round: Story = {
-  render: function Render(args) {
-    const [isSelected, setIsSelected] = useState(true);
-    return (
-      <ToggleButton
-        {...args}
-        isSelected={isSelected}
-        onClick={() => setIsSelected(!isSelected)}
-      >
-        Round
-      </ToggleButton>
-    );
-  },
-  args: {
-    round: true,
-    variant: "filled",
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    children: "Disabled",
-    isSelected: false,
-    disabled: true,
-    variant: "filled",
-  },
-};
-
-export const DisabledSelected: Story = {
-  args: {
-    children: "Disabled Selected",
-    isSelected: true,
-    disabled: true,
-    variant: "filled",
   },
 };
 
